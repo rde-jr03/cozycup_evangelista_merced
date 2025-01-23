@@ -1,29 +1,36 @@
+Homepage – CSS
+
 /* Reset some default styles */
 body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
 }
 
+/* font color */
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f2e0;
-    color: #4c3c32;
+    color: #000000;
 }
 
-header {
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-}
-
+/* css sa nav var */
 nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 97.5%;
+    background-color: #ffffff;
+    color: white;
+    padding: 10px 20px;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .logo img {
-    max-width: 100px;
+    max-width: 50px;
 }
 
 nav ul {
@@ -32,24 +39,39 @@ nav ul {
     gap: 20px;
 }
 
+/* color ng  menu, home, ....*/
 nav a {
     text-decoration: none;
-    color: #4c3c32;
+    color: #000000;
     font-weight: bold;
     transition: color 0.3s;
 }
 
 nav a:hover {
-    color: #7e685b;
+    color: #fc5c00;
 }
 
+/* HERO  */
 .hero {
+    position: relative;
     text-align: center;
     padding: 150px 0;
-    background-image: url('hero-bg.jpg');
+    background-image: url('../img/cafe interior.jpeg');
     background-size: cover;
-    color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: rgb(239, 239, 239);
 }
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+}
+
+
 
 .hero h1 {
     font-size: 36px;
@@ -70,9 +92,15 @@ nav a:hover {
     border-radius: 5px;
 }
 
-.cta-button:hover {
-    background-color: #7e685b;
+.hero h1, .hero p, .cta-button {
+    position: relative;
+    z-index: 2;
 }
+
+.cta-button:hover {
+    background-color: #ed6516;
+}
+
 
 .menu {
     padding: 100px 0;
